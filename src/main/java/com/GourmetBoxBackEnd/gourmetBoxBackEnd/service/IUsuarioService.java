@@ -16,10 +16,10 @@ public interface IUsuarioService {
     public void deleteUsuario(Integer id);
 
     //buscar usuario
-    public Usuario findUsuarioByName(String userName);
+    public Usuario findUsuarioById(Integer id);
 
     //modificar usuario
-    public void editUsuario(String userNameOriginal,
+    public void editUsuario(Integer idOriginal,
                             String nuevoNombreUsuario,
                             String nuevoTelefono,
                             String nuevoCorreo);
