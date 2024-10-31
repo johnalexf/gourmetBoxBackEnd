@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Date;
+
 @Getter @Setter
 @Entity
 public class ResumenCompra {
@@ -13,21 +15,35 @@ public class ResumenCompra {
     @Column(nullable = false)
     private int usuarioId;
     @Column(nullable = false)
+    private boolean enProceso;
+    private Date fechaResumenCompra;
     private Double precioTotalProductos;
-    @Column(nullable = false)
     private Double precioDomicilio;
-    @Column(nullable = false)
     private Double precioTotal;
+
+    public boolean isEnProceso() {
+        return enProceso;
+    }
+
+    public void setEnProceso(boolean enProceso) {
+        this.enProceso = enProceso;
+    }
+
+    public Date getFechaResumenCompra() {
+        return fechaResumenCompra;
+    }
+
+    public void setFechaResumenCompra(Date fechaResumenCompra) {
+        this.fechaResumenCompra = fechaResumenCompra;
+    }
 
     public ResumenCompra() {
     }
 
-    public ResumenCompra(int idResumenCompra, int usuarioId, Double precioTotalProductos, Double precioDomicilio, Double precioTotal) {
+    public ResumenCompra(int idResumenCompra, int usuarioId, boolean enProceso) {
         this.idResumenCompra = idResumenCompra;
         this.usuarioId = usuarioId;
-        this.precioTotalProductos = precioTotalProductos;
-        this.precioDomicilio = precioDomicilio;
-        this.precioTotal = precioTotal;
+        this.enProceso=enProceso;
     }
 
     public int getIdResumenCompra() {
