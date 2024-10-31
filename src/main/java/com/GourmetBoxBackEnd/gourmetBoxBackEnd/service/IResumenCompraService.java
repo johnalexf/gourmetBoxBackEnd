@@ -3,6 +3,7 @@ package com.GourmetBoxBackEnd.gourmetBoxBackEnd.service;
 import com.GourmetBoxBackEnd.gourmetBoxBackEnd.model.Producto;
 import com.GourmetBoxBackEnd.gourmetBoxBackEnd.model.ResumenCompra;
 
+import java.util.Date;
 import java.util.List;
 
 public interface IResumenCompraService {
@@ -20,6 +21,6 @@ public interface IResumenCompraService {
     public void deleteResumenCompra(Integer idResumenCompraAEliminar);
 
     //editar ResumenCompra
-    public void editResumenCompra(Integer idResumenCompraOriginal, Integer usuarioIdOriginal, Double nuevoPrecioTotalProductos, Double nuevoPrecioDomicilio, Double nuevoPrecioTotal);
+    public void editResumenCompra(Integer idResumenCompraOriginal, Double nuevoPrecioTotalProductos, Double nuevoPrecioDomicilio, Double nuevoPrecioTotal, boolean nuevoEnproceso, Date nuevaFechaResumenCompra);
 
 }

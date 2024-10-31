@@ -5,6 +5,7 @@ import com.GourmetBoxBackEnd.gourmetBoxBackEnd.model.ResumenCompra;
 import com.GourmetBoxBackEnd.gourmetBoxBackEnd.repository.IResumenCompraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Date;
 import java.util.List;
 
 public class ResumenCompraService implements IResumenCompraService{
@@ -34,11 +35,13 @@ public class ResumenCompraService implements IResumenCompraService{
     }
 
     @Override
-    public void editResumenCompra(Integer idResumenCompraOriginal, Integer usuarioIdOriginal, Double nuevoPrecioTotalProductos, Double nuevoPrecioDomicilio, Double nuevoPrecioTotal) {
+    public void editResumenCompra(Integer idResumenCompraOriginal, Double nuevoPrecioTotalProductos, Double nuevoPrecioDomicilio, Double nuevoPrecioTotal, boolean nuevoEnproceso, Date nuevaFechaResumenCompra) {
         ResumenCompra resumenCompraOriginal=this.findResumenCompraById(idResumenCompraOriginal);
         resumenCompraOriginal.setPrecioTotalProductos(nuevoPrecioTotalProductos);
         resumenCompraOriginal.setPrecioDomicilio(nuevoPrecioDomicilio);
         resumenCompraOriginal.setPrecioTotal(nuevoPrecioTotal);
+        resumenCompraOriginal.setEnProceso(nuevoEnproceso);
+        resumenCompraOriginal.setFechaResumenCompra(nuevaFechaResumenCompra);
         this.saveResumenCompra(resumenCompraOriginal);
     }
 }
