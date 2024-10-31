@@ -38,10 +38,10 @@ public class ProductosAgregadosService implements IProductosAgregadosService{
     }
 
     @Override
-    public void editProductoAgregado(Integer idOriginal, Usuario nuevoUsuario, Producto nuevoProducto, Integer nuevaCantidadProducto, Double nuevoSubtotal) {
+    public void editProductoAgregado(Integer idOriginal, Integer nuevoUsuario, Integer nuevoProducto, Integer nuevaCantidadProducto, Double nuevoSubtotal) {
         ProductosAgregados productosA = this.findProductoAgregadoById(idOriginal);
-        productosA.setUsuario(nuevoUsuario);
-        productosA.setProducto(nuevoProducto);
+        productosA.setIdUsuario(nuevoUsuario);
+        productosA.setIdProducto(nuevoProducto);
         productosA.setCantidadProducto(nuevaCantidadProducto);
         productosA.setSubtotal(nuevoSubtotal);
         this.saveProductosAgregados(productosA);

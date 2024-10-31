@@ -14,10 +14,10 @@ public class ProductosAgregados {
         private Integer idProductoAgregado;
 
         @Column(nullable = false)
-        private Usuario usuario;
+        private Integer idUsuario;
 
         @Column(nullable = false)
-        private Producto producto;
+        private Integer idProducto;
 
         @Column(nullable = false)
         private Integer cantidadProducto;
@@ -27,10 +27,10 @@ public class ProductosAgregados {
 
         public ProductosAgregados() {}
 
-        public ProductosAgregados(Integer idProductoAgregado, Usuario usuario, Producto producto, Integer cantidadProducto, Double subtotal) {
+        public ProductosAgregados(Integer idProductoAgregado, Integer usuario, Integer producto, Integer cantidadProducto, Double subtotal) {
             this.idProductoAgregado = idProductoAgregado;
-            this.usuario = usuario;
-            this.producto = producto;
+            this.idUsuario = usuario;
+            this.idProducto = producto;
             this.cantidadProducto = cantidadProducto;
             this.subtotal = subtotal;
         }
