@@ -23,14 +23,18 @@ public class ProductosAgregados {
         private Integer cantidadProducto;
 
         @Column(nullable = false)
+        private Integer idResumenCompra;
+
+        @Column(nullable = false)
         private Double subtotal;
 
         public ProductosAgregados() {}
 
-        public ProductosAgregados(Integer idProductoAgregado, Integer usuario, Integer producto, Integer cantidadProducto, Double subtotal) {
+        public ProductosAgregados(Integer idProductoAgregado, Integer usuario, Integer producto, Integer idResumenCompra,Integer cantidadProducto, Double subtotal) {
             this.idProductoAgregado = idProductoAgregado;
             this.idUsuario = usuario;
             this.idProducto = producto;
+            this.idResumenCompra = idResumenCompra;
             this.cantidadProducto = cantidadProducto;
             this.subtotal = subtotal;
         }
