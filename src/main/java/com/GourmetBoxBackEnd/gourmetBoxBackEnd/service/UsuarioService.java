@@ -32,19 +32,19 @@ public class UsuarioService implements IUsuarioService{
     }
 
     @Override
-    public Usuario findUsuarioByName(String userName) {
+    public Usuario findUsuarioById(Integer id) {
         Usuario usuario;
-        usuario = usuarioRepository.findByNombre(userName);
+        usuario = usuarioRepository.findById(id).orElse(null);
         return usuario;
     }
 
     @Override
-    public void editUsuario(String userNameOriginal,
+    public void editUsuario(Integer idOriginal,
                             String nuevoNombreUsuario,
                             String nuevoTelefono,
                             String nuevoCorreo)
     {
-        Usuario usuario = this.findUsuarioByName(userNameOriginal);
+        Usuario usuario = this.findUsuarioById(idOriginal);
         usuario.setNombreUsuario(nuevoNombreUsuario);
         usuario.setTelefono(nuevoTelefono);
         usuario.setCorreo(nuevoCorreo);
