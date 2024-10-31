@@ -22,7 +22,7 @@ public interface IProductosAgregadosService {
     public void deleteProductoAgregado(Integer id);
 
     //editar producto agregado
-    public void editProductoAgregado(Integer idOriginal, Usuario nuevoUsuario, Producto nuevoProducto, Integer nuevaCantidadProducto, Double nuevoSubtotal);
+    public void editProductoAgregado(Integer idOriginal, Integer nuevoUsuario,Integer idResumenCompraNuevo, Integer nuevoProducto, Integer nuevaCantidadProducto, Double nuevoSubtotal);
 
 
 }
