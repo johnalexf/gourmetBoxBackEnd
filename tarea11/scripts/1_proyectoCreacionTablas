@@ -19,10 +19,10 @@ CREATE TABLE usuario(
     idUsuario INT PRIMARY KEY AUTO_INCREMENT,
     nombreUsuario VARCHAR(50) NOT NULL,
     userName VARCHAR(50) NOT NULL,
-    contraseña VARCHAR(200) NOT NULL,
+    contrasena VARCHAR(200) NOT NULL,
     correo VARCHAR(50) NOT NULL,
     telefono VARCHAR(50) NOT NULL,
-    esAdmistrador TINYINT NOT NULL,
+    esAdmistrador BIT NOT NULL,
     suscripcionId INT,
     FOREIGN KEY (suscripcionId) REFERENCES suscripcion(idSuscripcion)
 );
@@ -30,9 +30,11 @@ CREATE TABLE usuario(
 CREATE TABLE resumenCompra(
     idResumenCompra INT PRIMARY KEY AUTO_INCREMENT,
     usuarioId INT NOT NULL,
-    precioTotalProductos DOUBLE NOT NULL,
-    precioDomicilio DOUBLE NOT NULL,
-    precioTotal DOUBLE NOT NULL,
+    precioTotalProductos DOUBLE ,
+    precioDomicilio DOUBLE ,
+    precioTotal DOUBLE ,
+    enProceso BIT NOT NULL,
+    fechaResumenCompra DATETIME,
     FOREIGN KEY (usuarioId) REFERENCES usuario(idUsuario)
 );
 
@@ -42,8 +44,10 @@ CREATE TABLE productosagregados (
 	productoId INT(10) NOT NULL,
 	cantidadProducto INT(10) NOT NULL,
 	subtotal DOUBLE NOT NULL,
+	resumenCompraId INT(10) NOT NULL,
 	FOREIGN KEY (usuarioId) REFERENCES usuario(idUsuario),
-	FOREIGN KEY (productoId) REFERENCES producto(idProducto)
+	FOREIGN KEY (productoId) REFERENCES producto(idProducto),
+	FOREIGN KEY (resumenCompraId) REFERENCES resumenCompra(idResumenCompra)
 );
 
 

@@ -24,7 +24,6 @@ public class Usuario {
     private String telefono;
     @Column (nullable = false)
     private Boolean esAdministrador;
-
     private int suscripcionId;
 
     public Usuario(){

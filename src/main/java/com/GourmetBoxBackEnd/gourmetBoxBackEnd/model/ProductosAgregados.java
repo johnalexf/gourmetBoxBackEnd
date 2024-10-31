@@ -9,8 +9,9 @@ import lombok.Setter;
 @Getter
 @Entity
 public class ProductosAgregados {
+
         @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @GeneratedValue(strategy = GenerationType.SEQUENCE)
         private Integer idProductoAgregado;
 
         @Column(nullable = false)
