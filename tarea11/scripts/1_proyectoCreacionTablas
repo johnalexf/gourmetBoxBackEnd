@@ -1,0 +1,51 @@
+CREATE TABLE producto(
+	idProducto INT PRIMARY KEY AUTO_INCREMENT,
+	nombreProducto VARCHAR(50) NOT NULL,
+	descripcionProducto VARCHAR(200) NOT NULL,
+	categoria VARCHAR(15) NOT NULL,
+	imgProducto VARCHAR(50) NOT NULL,
+	precioProducto DOUBLE NOT NULL    
+); 
+
+CREATE TABLE suscripcion(
+    idSuscripcion INT PRIMARY KEY AUTO_INCREMENT,
+    nombrePlan VARCHAR(100) NOT NULL,
+    descripcionPlan VARCHAR(200) NOT NULL,
+    precio DOUBLE NOT NULL,
+    imgSuscripcion VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE usuario(
+    idUsuario INT PRIMARY KEY AUTO_INCREMENT,
+    nombreUsuario VARCHAR(50) NOT NULL,
+    userName VARCHAR(50) NOT NULL,
+    contraseña VARCHAR(200) NOT NULL,
+    correo VARCHAR(50) NOT NULL,
+    telefono VARCHAR(50) NOT NULL,
+    esAdmistrador TINYINT NOT NULL,
+    suscripcionId INT,
+    FOREIGN KEY (suscripcionId) REFERENCES suscripcion(idSuscripcion)
+);
+
+CREATE TABLE resumenCompra(
+    idResumenCompra INT PRIMARY KEY AUTO_INCREMENT,
+    usuarioId INT NOT NULL,
+    precioTotalProductos DOUBLE NOT NULL,
+    precioDomicilio DOUBLE NOT NULL,
+    precioTotal DOUBLE NOT NULL,
+    FOREIGN KEY (usuarioId) REFERENCES usuario(idUsuario)
+);
+
+CREATE TABLE productosagregados (
+	idProductosAgregados INT PRIMARY KEY AUTO_INCREMENT,
+	usuarioId INT(10) NOT NULL,
+	productoId INT(10) NOT NULL,
+	cantidadProducto INT(10) NOT NULL,
+	subtotal DOUBLE NOT NULL,
+	FOREIGN KEY (usuarioId) REFERENCES usuario(idUsuario),
+	FOREIGN KEY (productoId) REFERENCES producto(idProducto)
+);
+
+
+
+

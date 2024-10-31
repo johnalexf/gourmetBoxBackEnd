@@ -1,0 +1,7 @@
+INSERT INTO suscripcion (nombrePlan, descripcionPlan, precio) VALUES
+('Box Senior', '5 Almuerzos de nuestra carta, Postre gourmet, 25 % de Cashback', 320000),
+('Box Friends', '10 Almuerzos para compartir, Limonada natural, 25 % de Cashback', 310000),
+('Box Code BreakFast', '3 Desayunos (Personalizados), Latte, Postre saludable', 300000),
+('Debug Box', '3 Desayunos, 3 Almuerzos, Bebida del día', 340000),
+('Bakend Power', '4 Almuerzos (Personalizados), Bebida del día, Sopa del día', 250000),
+('Senior Box Deluxe', '3 Desayunos (Personalizados), 2 Almuerzos ligeros, Smoothie proteico', 320000);
