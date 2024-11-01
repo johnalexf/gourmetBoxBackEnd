@@ -3,6 +3,7 @@ package com.GourmetBoxBackEnd.gourmetBoxBackEnd.controller;
 
 import com.GourmetBoxBackEnd.gourmetBoxBackEnd.model.Producto;
 import com.GourmetBoxBackEnd.gourmetBoxBackEnd.model.ProductosAgregados;
+import com.GourmetBoxBackEnd.gourmetBoxBackEnd.model.ResumenCompra;
 import com.GourmetBoxBackEnd.gourmetBoxBackEnd.model.Usuario;
 import com.GourmetBoxBackEnd.gourmetBoxBackEnd.service.IProductosAgregadosService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,13 +42,13 @@ public class ProductosAgregadosController {
     public ProductosAgregados editProductosAgregados(
             @PathVariable Integer id,
             @RequestParam(required = false, name = "usuario") Usuario nuevoUsuario,
-            @RequestParam(required = false, name = "resumenCompra") Usuario nuevoResumenCompra,
-            @RequestParam(required = false, name = "producto") Usuario nuevoProducto,
+            @RequestParam(required = false, name = "resumenCompra") ResumenCompra nuevoResumenCompra,
+            @RequestParam(required = false, name = "producto") Producto nuevoProducto,
             @RequestParam(required = false, name = "cantidadProducto") Integer nuevaCantidadProducto,
             @RequestParam(required = false, name = "subtotal") Double nuevoSubtotal
 
     ){
-        editProductosAgregados(id,nuevoUsuario, nuevoResumenCompra, nuevoProducto, nuevaCantidadProducto, nuevoSubtotal);
+        productosAgregadosService.editProductosAgregados(id,nuevoUsuario, nuevoResumenCompra, nuevoProducto, nuevaCantidadProducto, nuevoSubtotal);
         ProductosAgregados productosAgregados = productosAgregadosService.findProductoAgregadoById(id);
         return productosAgregados;
     }
