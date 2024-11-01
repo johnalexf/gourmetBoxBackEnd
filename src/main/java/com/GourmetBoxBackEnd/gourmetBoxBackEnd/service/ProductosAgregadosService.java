@@ -2,6 +2,7 @@ package com.GourmetBoxBackEnd.gourmetBoxBackEnd.service;
 
 import com.GourmetBoxBackEnd.gourmetBoxBackEnd.model.Producto;
 import com.GourmetBoxBackEnd.gourmetBoxBackEnd.model.ProductosAgregados;
+import com.GourmetBoxBackEnd.gourmetBoxBackEnd.model.ResumenCompra;
 import com.GourmetBoxBackEnd.gourmetBoxBackEnd.model.Usuario;
 import com.GourmetBoxBackEnd.gourmetBoxBackEnd.repository.IProductosAgregadosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class ProductosAgregadosService implements IProductosAgregadosService{
     private IProductosAgregadosRepository productosAgregadosRepository;
 
     @Override
-    public List<ProductosAgregados> getProductosAgergados() {
+    public List<ProductosAgregados> getProductosAgregados() {
         List<ProductosAgregados> listaProductosAgregados = productosAgregadosRepository.findAll();
         return listaProductosAgregados;
     }
@@ -27,23 +28,23 @@ public class ProductosAgregadosService implements IProductosAgregadosService{
     }
 
     @Override
-    public ProductosAgregados findProductoAgregadoById(Integer id) {
+    public ProductosAgregados findProductosAgregadosById(Integer id) {
         ProductosAgregados productosAgregados = productosAgregadosRepository.findById(id).orElse(null);
         return productosAgregados;
     }
 
     @Override
-    public void deleteProductoAgregado(Integer id) {
+    public void deleteProductosAgregados(Integer id) {
         productosAgregadosRepository.deleteById(id);
     }
 
     @Override
-    public void editProductoAgregado(Integer idOriginal, Integer nuevoUsuario,Integer idResumenCompraNuevo, Integer nuevoProducto, Integer nuevaCantidadProducto, Double nuevoSubtotal) {
+    public void editProductosAgregados(Integer idOriginal, Usuario nuevoUsuario, ResumenCompra idResumenCompraNuevo, Producto nuevoProducto, Integer nuevaCantidadProducto, Double nuevoSubtotal) {
         ProductosAgregados productosA = this.findProductoAgregadoById(idOriginal);
-        productosA.setUsuarioId(nuevoUsuario);
-        productosA.setProductoId(nuevoProducto);
-        productosA.setResumenCompraId(idResumenCompraNuevo);
-        productosA.setCantidadProducto(nuevaCantidadProducto);
+        productosA.setUsuario_id(nuevoUsuario);
+        productosA.setProducto_id(nuevoProducto);
+        productosA.setResumen_compra_id(idResumenCompraNuevo);
+        productosA.setCantidad_producto(nuevaCantidadProducto);
         productosA.setSubtotal(nuevoSubtotal);
         this.saveProductosAgregados(productosA);
     }

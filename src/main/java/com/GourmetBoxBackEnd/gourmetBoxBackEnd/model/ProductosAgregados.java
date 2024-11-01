@@ -10,33 +10,35 @@ import lombok.Setter;
 @Entity
 public class ProductosAgregados {
         @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Integer idProductosAgregado;
+        @GeneratedValue(strategy = GenerationType.SEQUENCE)
+        private Integer id_productos_agregados;
+
+        @ManyToOne
+        @JoinColumn(name = "id_producto")
+        private Producto producto_id;
 
         @Column(nullable = false)
-        private Integer usuarioId;
+        private Integer cantidad_producto;
 
-        @Column(nullable = false)
-        private Integer productoId;
+        @OneToOne
+        @JoinColumn(name = "id_usuario")
+        private Usuario usuario_id;
 
-        @Column(nullable = false)
-        private Integer cantidadProducto;
-
-        @Column(nullable = false)
-        private Integer resumenCompraId;
+        @ManyToOne
+        @JoinColumn(name = "id_resumen_compra")
+        private ResumenCompra resumen_compra_id;
 
         @Column(nullable = false)
         private Double subtotal;
 
         public ProductosAgregados() {}
 
-        public ProductosAgregados(Integer idProductoAgregado, Integer usuario, Integer producto, Integer idResumenCompra,Integer cantidadProducto, Double subtotal) {
-            this.idProductosAgregado = idProductoAgregado;
-            this.usuarioId = usuario;
-            this.productoId = producto;
-            this.resumenCompraId = idResumenCompra;
-            this.cantidadProducto = cantidadProducto;
-            this.subtotal = subtotal;
-        }
-
+    public ProductosAgregados(Integer id_productos_agregados, Producto producto_id, Integer cantidad_producto, Usuario usuario_id, ResumenCompra resumen_compra_id, Double subtotal) {
+        this.id_productos_agregados = id_productos_agregados;
+        this.producto_id = producto_id;
+        this.cantidad_producto = cantidad_producto;
+        this.usuario_id = usuario_id;
+        this.resumen_compra_id = resumen_compra_id;
+        this.subtotal = subtotal;
+    }
 }
