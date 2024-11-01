@@ -1,53 +1,53 @@
 CREATE TABLE producto(
-	idProducto INT PRIMARY KEY AUTO_INCREMENT,
-	nombreProducto VARCHAR(50) NOT NULL,
-	descripcionProducto VARCHAR(200) NOT NULL,
+	id_producto INT PRIMARY KEY AUTO_INCREMENT,
+	nombre_producto VARCHAR(50) NOT NULL,
+	descripcion_roducto VARCHAR(200) NOT NULL,
 	categoria VARCHAR(15) NOT NULL,
-	imgProducto VARCHAR(50) NOT NULL,
-	precioProducto DOUBLE NOT NULL    
+	img_roducto VARCHAR(50) NOT NULL,
+	precio_producto DOUBLE NOT NULL
 ); 
 
 CREATE TABLE suscripcion(
-    idSuscripcion INT PRIMARY KEY AUTO_INCREMENT,
-    nombrePlan VARCHAR(100) NOT NULL,
-    descripcionPlan VARCHAR(200) NOT NULL,
+    id_suscripcion INT PRIMARY KEY AUTO_INCREMENT,
+    nombre_plan VARCHAR(100) NOT NULL,
+    descripcion_plan VARCHAR(200) NOT NULL,
     precio DOUBLE NOT NULL,
-    imgSuscripcion VARCHAR(50) NOT NULL
+    img_puscripcion VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE usuario(
-    idUsuario INT PRIMARY KEY AUTO_INCREMENT,
-    nombreUsuario VARCHAR(50) NOT NULL,
-    userName VARCHAR(50) NOT NULL,
+    id_usuario INT PRIMARY KEY AUTO_INCREMENT,
+    nombre_usuario VARCHAR(50) NOT NULL,
+    user_name VARCHAR(50) NOT NULL,
     contrasena VARCHAR(200) NOT NULL,
     correo VARCHAR(50) NOT NULL,
     telefono VARCHAR(50) NOT NULL,
-    esAdmistrador BIT NOT NULL,
-    suscripcionId INT,
+    es_admistrador BIT NOT NULL,
+    suscripcion_id INT,
     FOREIGN KEY (suscripcionId) REFERENCES suscripcion(idSuscripcion)
 );
 
 CREATE TABLE resumenCompra(
-    idResumenCompra INT PRIMARY KEY AUTO_INCREMENT,
-    usuarioId INT NOT NULL,
-    precioTotalProductos DOUBLE ,
-    precioDomicilio DOUBLE ,
-    precioTotal DOUBLE ,
-    enProceso BIT NOT NULL,
-    fechaResumenCompra DATETIME,
-    FOREIGN KEY (usuarioId) REFERENCES usuario(idUsuario)
+    id_resumenCompra INT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id INT NOT NULL,
+    precio_total_productos DOUBLE ,
+    precio_domicilio DOUBLE ,
+    precio_total DOUBLE ,
+    en_proceso BIT NOT NULL,
+    fecha_resumen_compra DATETIME,
+    FOREIGN KEY (usuario_id) REFERENCES usuario(id_usuario)
 );
 
 CREATE TABLE productosagregados (
-	idProductosAgregados INT PRIMARY KEY AUTO_INCREMENT,
-	usuarioId INT(10) NOT NULL,
-	productoId INT(10) NOT NULL,
-	cantidadProducto INT(10) NOT NULL,
+	id_productos_agregados INT PRIMARY KEY AUTO_INCREMENT,
+	usuario_id INT(10) NOT NULL,
+	producto_id INT(10) NOT NULL,
+	cantidad_producto INT(10) NOT NULL,
 	subtotal DOUBLE NOT NULL,
-	resumenCompraId INT(10) NOT NULL,
-	FOREIGN KEY (usuarioId) REFERENCES usuario(idUsuario),
+	resumen_compra_id INT(10) NOT NULL,
+	FOREIGN KEY (usuario_id) REFERENCES usuario(idUsuario),
 	FOREIGN KEY (productoId) REFERENCES producto(idProducto),
-	FOREIGN KEY (resumenCompraId) REFERENCES resumenCompra(idResumenCompra)
+	FOREIGN KEY (resumen_compra_id) REFERENCES resumenCompra(id_resumen_compra)
 );
 
 

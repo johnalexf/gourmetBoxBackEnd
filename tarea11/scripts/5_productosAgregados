@@ -1,11 +1,11 @@
-INSERT INTO productosagregados (usuarioId, productoId, cantidadProducto, subtotal) VALUES
-(2, 1, 2, 12500 * 2), -- Wafle Primavera para el usuario 2
-(3, 2, 1, 16500 * 1), -- Tostada Napolitana para el usuario 3
-(4, 3, 3, 18500 * 3), -- Bowl Exotic para el usuario 4
-(5, 4, 1, 22500 * 1), -- Solomito en Cerveza para el usuario 5
-(6, 5, 2, 22500 * 2), -- Bowl Junior para el usuario 6
-(2, 6, 1, 34500 * 1), -- Marinado Senior para el usuario 2
-(3, 7, 1, 34500 * 1), -- Gourmet Romero para el usuario 3
-(4, 8, 2, 16500 * 2), -- Rojo Escarlata para el usuario 4
-(5, 9, 1, 12500 * 1), -- Vainilla Invierno para el usuario 5
-(6, 10, 3, 12500 * 3); -- Verde Aguacate para el usuario 6
+INSERT INTO productosagregados (usuario_id, producto_id, cantidad_producto, subtotal, resumen_compra_id) VALUES
+(2, 1, 2, 12500 * 2,1), -- Wafle Primavera para el usuario 2
+(3, 2, 1, 16500 * 1,2), -- Tostada Napolitana para el usuario 3
+(4, 3, 3, 18500 * 3,3), -- Bowl Exotic para el usuario 4
+(5, 4, 1, 22500 * 1,4), -- Solomito en Cerveza para el usuario 5
+(6, 5, 2, 22500 * 2,5), -- Bowl Junior para el usuario 6
+(2, 6, 1, 34500 * 1,1), -- Marinado Senior para el usuario 2
+(3, 7, 1, 34500 * 1,2), -- Gourmet Romero para el usuario 3
+(4, 8, 2, 16500 * 2,3), -- Rojo Escarlata para el usuario 4
+(5, 9, 1, 12500 * 1,4), -- Vainilla Invierno para el usuario 5
+(6, 10, 3, 12500 * 3,5); -- Verde Aguacate para el usuario 6
