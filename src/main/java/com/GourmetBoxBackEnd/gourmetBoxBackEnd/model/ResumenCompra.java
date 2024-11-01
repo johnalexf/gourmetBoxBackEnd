@@ -11,79 +11,79 @@ import java.util.Date;
 public class ResumenCompra {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int idResumenCompra;
+    private int id_resumen_compra;
     @Column(nullable = false)
-    private int usuarioId;
+    private int usuario_id;
     @Column(nullable = false)
-    private boolean enProceso;
-    private Date fechaResumenCompra;
-    private Double precioTotalProductos;
-    private Double precioDomicilio;
-    private Double precioTotal;
-
-    public boolean isEnProceso() {
-        return enProceso;
-    }
-
-    public void setEnProceso(boolean enProceso) {
-        this.enProceso = enProceso;
-    }
-
-    public Date getFechaResumenCompra() {
-        return fechaResumenCompra;
-    }
-
-    public void setFechaResumenCompra(Date fechaResumenCompra) {
-        this.fechaResumenCompra = fechaResumenCompra;
-    }
+    private boolean en_proceso;
+    private Date fecha_resumen_compra;
+    private Double precio_total_productos;
+    private Double precio_domicilio;
+    private Double precio_total;
 
     public ResumenCompra() {
     }
 
-    public ResumenCompra(int idResumenCompra, int usuarioId, boolean enProceso) {
-        this.idResumenCompra = idResumenCompra;
-        this.usuarioId = usuarioId;
-        this.enProceso=enProceso;
+    public ResumenCompra(int id_resumen_compra, int usuario_id, boolean en_proceso) {
+        this.id_resumen_compra = id_resumen_compra;
+        this.usuario_id = usuario_id;
+        this.en_proceso = en_proceso;
     }
 
-    public int getIdResumenCompra() {
-        return idResumenCompra;
+    public int getId_resumen_compra() {
+        return id_resumen_compra;
     }
 
-    public void setIdResumenCompra(int idResumenCompra) {
-        this.idResumenCompra = idResumenCompra;
+    public void setId_resumen_compra(int id_resumen_compra) {
+        this.id_resumen_compra = id_resumen_compra;
     }
 
-    public Double getPrecioTotalProductos() {
-        return precioTotalProductos;
+    public int getUsuario_id() {
+        return usuario_id;
     }
 
-    public void setPrecioTotalProductos(Double precioTotalProductos) {
-        this.precioTotalProductos = precioTotalProductos;
+    public void setUsuario_id(int usuario_id) {
+        this.usuario_id = usuario_id;
     }
 
-    public int getUsuarioId() {
-        return usuarioId;
+    public boolean isEn_proceso() {
+        return en_proceso;
     }
 
-    public void setUsuarioId(int usuarioId) {
-        this.usuarioId = usuarioId;
+    public void setEn_proceso(boolean en_proceso) {
+        this.en_proceso = en_proceso;
     }
 
-    public Double getPrecioDomicilio() {
-        return precioDomicilio;
+    public Date getFecha_resumen_compra() {
+        return fecha_resumen_compra;
     }
 
-    public void setPrecioDomicilio(Double precioDomicilio) {
-        this.precioDomicilio = precioDomicilio;
+    public void setFecha_resumen_compra(Date fecha_resumen_compra) {
+        this.fecha_resumen_compra = fecha_resumen_compra;
     }
 
-    public Double getPrecioTotal() {
-        return precioTotal;
+    public Double getPrecio_total_productos() {
+        return precio_total_productos;
     }
 
-    public void setPrecioTotal(Double precioTotal) {
-        this.precioTotal = precioTotal;
+    public void setPrecio_total_productos(Double precio_total_productos) {
+        this.precio_total_productos = precio_total_productos;
+    }
+
+    public Double getPrecio_domicilio() {
+        return precio_domicilio;
+    }
+
+    public void setPrecio_domicilio(Double precio_domicilio) {
+        this.precio_domicilio = precio_domicilio;
+    }
+
+    public Double getPrecio_total() {
+        return precio_total;
+    }
+
+    public void setPrecio_total(Double precio_total) {
+        this.precio_total = precio_total;
     }
 }
 //CREATE TABLE resumenCompra(
