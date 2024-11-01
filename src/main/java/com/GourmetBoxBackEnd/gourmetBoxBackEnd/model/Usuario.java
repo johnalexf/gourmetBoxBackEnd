@@ -11,11 +11,11 @@ public class Usuario {
 
     @Id
     @GeneratedValue (strategy = GenerationType.SEQUENCE)
-    private int idUsuario;
+    private int id_usuario;
     @Column(nullable = false)
-    private String nombreUsuario;
+    private String nombre_usuario;
     @Column (nullable = false)
-    private String userName;
+    private String user_name;
     @Column (nullable = false)
     private String contrasena;
     @Column (nullable = false)
@@ -23,50 +23,53 @@ public class Usuario {
     @Column (nullable = false)
     private String telefono;
     @Column (nullable = false)
-    private Boolean esAdministrador;
-    private int suscripcionId;
+    private Boolean es_administrador;
+    private int suscripcion_id;
 
     public Usuario(){
 
     }
 
-    public Usuario(int idUsuario, String nombreUsuario,
-                   int suscripcionId, Boolean esAdministrador,
-                   String telefono, String correo,
-                   String contrasena, String userName)
-    {
-        this.idUsuario = idUsuario;
-        this.nombreUsuario = nombreUsuario;
-        this.suscripcionId = suscripcionId;
-        this.esAdministrador = esAdministrador;
-        this.telefono = telefono;
-        this.correo = correo;
+    public Usuario(int id_usuario,
+                   String nombre_usuario,
+                   String contrasena,
+                   String user_name,
+                   String correo,
+                   String telefono,
+                   Boolean es_administrador,
+                   int suscripcion_id) {
+        this.id_usuario = id_usuario;
+        this.nombre_usuario = nombre_usuario;
         this.contrasena = contrasena;
-        this.userName = userName;
+        this.user_name = user_name;
+        this.correo = correo;
+        this.telefono = telefono;
+        this.es_administrador = es_administrador;
+        this.suscripcion_id = suscripcion_id;
     }
 
-    public int getIdUsuario() {
-        return idUsuario;
+    public int getId_usuario() {
+        return id_usuario;
     }
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setId_usuario(int id_usuario) {
+        this.id_usuario = id_usuario;
     }
 
-    public String getNombreUsuario() {
-        return nombreUsuario;
+    public String getNombre_usuario() {
+        return nombre_usuario;
     }
 
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
+    public void setNombre_usuario(String nombre_usuario) {
+        this.nombre_usuario = nombre_usuario;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUser_name() {
+        return user_name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
     }
 
     public String getContrasena() {
@@ -93,19 +96,21 @@ public class Usuario {
         this.telefono = telefono;
     }
 
-    public Boolean getEsAdministrador() {
-        return esAdministrador;
+    public Boolean getEs_administrador() {
+        return es_administrador;
     }
 
-    public void setEsAdministrador(Boolean esAdministrador) {
-        this.esAdministrador = esAdministrador;
+    public void setEs_administrador(Boolean es_administrador) {
+        this.es_administrador = es_administrador;
     }
 
-    public int getSuscripcionId() {
-        return suscripcionId;
+    public int getSuscripcion_id() {
+        return suscripcion_id;
     }
 
-    public void setSuscripcionId(int suscripcionId) {
-        this.suscripcionId = suscripcionId;
+    public void setSuscripcion_id(int suscripcion_id) {
+        this.suscripcion_id = suscripcion_id;
     }
+
+
 }
