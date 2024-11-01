@@ -14,31 +14,85 @@ public class ProductosAgregados {
         private Integer id_productos_agregados;
 
         @ManyToOne
-        @JoinColumn(name = "id_producto")
-        private Producto producto_id;
+        @JoinColumn(name = "producto_id")
+        private Producto producto;
 
         @Column(nullable = false)
         private Integer cantidad_producto;
 
         @OneToOne
         @JoinColumn(name = "id_usuario")
-        private Usuario usuario_id;
+        private Usuario usuario;
 
         @ManyToOne
         @JoinColumn(name = "id_resumen_compra")
-        private ResumenCompra resumen_compra_id;
+        private ResumenCompra resumenCompra;
 
         @Column(nullable = false)
         private Double subtotal;
 
         public ProductosAgregados() {}
 
-    public ProductosAgregados(Integer id_productos_agregados, Producto producto_id, Integer cantidad_producto, Usuario usuario_id, ResumenCompra resumen_compra_id, Double subtotal) {
+    public ProductosAgregados(Integer id_productos_agregados,
+                              Producto producto,
+                              Integer cantidad_producto,
+                              Usuario usuario,
+                              ResumenCompra resumenCompra,
+                              Double subtotal) {
         this.id_productos_agregados = id_productos_agregados;
-        this.producto_id = producto_id;
+        this.producto = producto;
         this.cantidad_producto = cantidad_producto;
-        this.usuario_id = usuario_id;
-        this.resumen_compra_id = resumen_compra_id;
+        this.usuario = usuario;
+        this.resumenCompra = resumenCompra;
+        this.subtotal = subtotal;
+    }
+
+
+    public Integer getId_productos_agregados() {
+        return id_productos_agregados;
+    }
+
+    public void setId_productos_agregados(Integer id_productos_agregados) {
+        this.id_productos_agregados = id_productos_agregados;
+    }
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
+
+    public Integer getCantidad_producto() {
+        return cantidad_producto;
+    }
+
+    public void setCantidad_producto(Integer cantidad_producto) {
+        this.cantidad_producto = cantidad_producto;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public ResumenCompra getResumenCompra() {
+        return resumenCompra;
+    }
+
+    public void setResumenCompra(ResumenCompra resumenCompra) {
+        this.resumenCompra = resumenCompra;
+    }
+
+    public Double getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(Double subtotal) {
         this.subtotal = subtotal;
     }
 }

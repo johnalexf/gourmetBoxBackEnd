@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter @Setter
 @Entity
 public class Producto {
@@ -21,6 +23,23 @@ public class Producto {
     private String img_producto;
     @Column (nullable = false)
     private Double precio_producto;
+
+    @OneToMany(mappedBy = "producto")
+    private List<ProductosAgregados> productosAgregados;
+
+
+//mascota clase que va tener la clave foranea
+    //cuando usamos ManyToOne el reconoce que el id de llave primaria va ser la llave foranea
+//    @ManyToOne //indica que varias mascotas pueden tener un dueño
+//    @JoinColumn(name = "id_persona")
+//    private Persona dueno;
+
+//persona
+    //    @OneToMany(mappedBy = "dueno")
+//    private List<Mascota> mascotas;
+
+
+
 
     public Producto(){
 

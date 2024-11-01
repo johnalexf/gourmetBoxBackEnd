@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 @Getter @Setter
 @Entity
@@ -20,6 +21,10 @@ public class ResumenCompra {
     private Double precio_total_productos;
     private Double precio_domicilio;
     private Double precio_total;
+
+
+    @OneToMany(mappedBy = "resumenCompra")
+    private List<ProductosAgregados> productosAgregados;
 
     public ResumenCompra() {
     }

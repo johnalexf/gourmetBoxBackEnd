@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter @Setter
 @Entity
 public class Usuario {
@@ -25,6 +27,9 @@ public class Usuario {
     @Column (nullable = false)
     private Boolean es_administrador;
     private int suscripcion_id;
+
+    @OneToMany(mappedBy = "usuario")
+    private List<ProductosAgregados> productosAgregados;
 
     public Usuario(){
 
