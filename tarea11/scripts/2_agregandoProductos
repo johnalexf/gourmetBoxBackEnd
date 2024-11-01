@@ -1,4 +1,4 @@
-INSERT INTO producto (nombreProducto, descripcionProducto, categoria, precioProducto, imgProducto ) VALUES
+INSERT INTO producto (nombre_producto, descripcion_producto, categoria, precio_producto, img_producto) VALUES
 ('Wafle Primavera', 'Waffle con crema dulce y naranja en conserva caramelizada', 'desayuno', 12500, '../img_comidas/DESAYUNOS/Wafle_primavera.png'),
 ('Tostada Napolitana', 'Tostada de pan de masa madre, salsa napolitana, huevo estrellado y se acompaña con café con leche', 'desayuno', 16500, '../img_comidas/DESAYUNOS/Tostada_napolitana.png'),
 ('Bowl Exotic', 'Mariscos salteados, una base de vegetales (Aguacate, lechuga y acelgas) y huevo estrellado', 'desayuno', 18500, '../img_comidas/DESAYUNOS/Bowl_exotic.png'),

@@ -1,4 +1,4 @@
-INSERT INTO suscripcion (nombrePlan, descripcionPlan, precio) VALUES
+INSERT INTO suscripcion (nombre_plan, descripcion_plan, precio) VALUES
 ('Box Senior', '5 Almuerzos de nuestra carta, Postre gourmet, 25 % de Cashback', 320000),
 ('Box Friends', '10 Almuerzos para compartir, Limonada natural, 25 % de Cashback', 310000),
 ('Box Code BreakFast', '3 Desayunos (Personalizados), Latte, Postre saludable', 300000),

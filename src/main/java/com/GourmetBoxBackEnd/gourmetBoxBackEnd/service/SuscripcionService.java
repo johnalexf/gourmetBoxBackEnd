@@ -18,30 +18,6 @@ public class SuscripcionService implements ISuscripcionService {
         return suscripcionRepository.findAll();
     }
 
-    @Override
-    public void saveSuscripcion(Suscripcion suscripcion) {
-        suscripcionRepository.save(suscripcion);
-    }
 
-    @Override
-    public Suscripcion findSuscripcionById(Integer id) {
-        return suscripcionRepository.findById(id).orElse(null);
-    }
 
-    @Override
-    public void deleteSuscripcion(Integer id) {
-        suscripcionRepository.deleteById(id);
-    }
-
-    @Override
-    public void editSuscripcion(Integer idOriginal, String nuevoNombrePlan, String nuevoDescripcionPlan, Double nuevoPrecio, String nuevaImgSuscripcion) {
-        Suscripcion suscripcion = this.findSuscripcionById(idOriginal);
-        if (suscripcion != null) {
-            suscripcion.setNombrePlan(nuevoNombrePlan);
-            suscripcion.setDescripcionPlan(nuevoDescripcionPlan);
-            suscripcion.setPrecio(nuevoPrecio);
-            suscripcion.setImgSuscripcion(nuevaImgSuscripcion);
-            saveSuscripcion(suscripcion); // Guardar cambios
-        }
-    }
 }

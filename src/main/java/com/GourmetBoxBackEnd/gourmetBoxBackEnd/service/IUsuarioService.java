@@ -24,6 +24,8 @@ public interface IUsuarioService {
                             String nuevoTelefono,
                             String nuevoCorreo);
 
+
+
     //metodo para modificar suscripcion de un usuario
     //pensado para una ampliacion del proyecto
 }
