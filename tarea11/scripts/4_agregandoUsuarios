@@ -1,4 +1,4 @@
-INSERT INTO usuario (userName, esAdmistrador, nombreUsuario, correo, telefono, contraseña) VALUES
+INSERT INTO usuario (user_name, es_administrador, nombre_usuario, correo, telefono, contraseña) VALUES
     ("admin", 1, "Software sinfoni", "softwaresinfoni@gmail.com", "6045555555", "1e5a20531399139d"),
     ("john", 0, "john forer", "johnforero@hotmail.com", "3201235654", "1d3828ef1337"),
     ("Eduard", 0, "Eduard Idrobo", "Eduard@hotmail.com", "3201234567", "1b392df62ccd1337"),
