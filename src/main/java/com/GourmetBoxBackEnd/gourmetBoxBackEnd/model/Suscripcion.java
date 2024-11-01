@@ -4,56 +4,64 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter @Setter
+@Getter
+@Setter
 @Entity
 public class Suscripcion {
+
     @Id
-    @GeneratedValue (strategy = GenerationType.SEQUENCE)
-    private int idSuscripcion;
-    @Column (nullable = false)
-    private String nombrePlan;
-    @Column (nullable = false)
-    private String descripcionPlan;
-    @Column (nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Integer id_suscripcion;
+
+    @Column(nullable = false)
+    private String nombre_plan;
+
+    @Column(nullable = false)
+    private String descripcion_plan;
+
+    @Column(nullable = false)
     private double precio;
-    @Column (nullable = false)
-    private String imgSuscripcion;
 
+    @Column(nullable = false)
+    private String img_suscripcion;
 
-    public Suscripcion(){
-
+    // Constructor vacío
+    public Suscripcion() {
     }
 
-    public Suscripcion(int idSuscripcion, String nombrePlan, String descripcionPlan, double precio, String imgSuscripcion) {
-        this.idSuscripcion = idSuscripcion;
-        this.nombrePlan = nombrePlan;
-        this.descripcionPlan = descripcionPlan;
+    // Constructor con parámetros
+    public Suscripcion(Integer id_suscripcion, String nombre_plan, String descripcion_plan, double precio, String img_suscripcion) {
+        this.id_suscripcion = id_suscripcion;
+        this.nombre_plan = nombre_plan;
+        this.descripcion_plan = descripcion_plan;
         this.precio = precio;
-        this.imgSuscripcion = imgSuscripcion;
+        this.img_suscripcion = img_suscripcion;
     }
 
-    public int getIdSuscripcion() {
-        return idSuscripcion;
+    //Getter and Setter manuales
+
+    public Integer getId_suscripcion() {
+        return id_suscripcion;
     }
 
-    public void setIdSuscripcion(int idSuscripcion) {
-        this.idSuscripcion = idSuscripcion;
+    public void setId_suscripcion(Integer id_suscripcion) {
+        this.id_suscripcion = id_suscripcion;
     }
 
-    public String getNombrePlan() {
-        return nombrePlan;
+    public String getNombre_plan() {
+        return nombre_plan;
     }
 
-    public void setNombrePlan(String nombrePlan) {
-        this.nombrePlan = nombrePlan;
+    public void setNombre_plan(String nombre_plan) {
+        this.nombre_plan = nombre_plan;
     }
 
-    public String getDescripcionPlan() {
-        return descripcionPlan;
+    public String getDescripcion_plan() {
+        return descripcion_plan;
     }
 
-    public void setDescripcionPlan(String descripcionPlan) {
-        this.descripcionPlan = descripcionPlan;
+    public void setDescripcion_plan(String descripcion_plan) {
+        this.descripcion_plan = descripcion_plan;
     }
 
     public double getPrecio() {
@@ -64,11 +72,11 @@ public class Suscripcion {
         this.precio = precio;
     }
 
-    public String getImgSuscripcion() {
-        return imgSuscripcion;
+    public String getImg_suscripcion() {
+        return img_suscripcion;
     }
 
-    public void setImgSuscripcion(String imgSuscripcion) {
-        this.imgSuscripcion = imgSuscripcion;
+    public void setImg_suscripcion(String img_suscripcion) {
+        this.img_suscripcion = img_suscripcion;
     }
 }
