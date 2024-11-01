@@ -13,8 +13,11 @@ public class ResumenCompra {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id_resumen_compra;
-    @Column(nullable = false)
-    private int usuario_id;
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuarioResumen ;
+
     @Column(nullable = false)
     private boolean en_proceso;
     private Date fecha_resumen_compra;
@@ -29,10 +32,21 @@ public class ResumenCompra {
     public ResumenCompra() {
     }
 
-    public ResumenCompra(int id_resumen_compra, int usuario_id, boolean en_proceso) {
+    public ResumenCompra(int id_resumen_compra,
+                         Usuario usuarioResumen,
+                         boolean en_proceso,
+                         Date fecha_resumen_compra,
+                         Double precio_total_productos,
+                         Double precio_domicilio,
+                         Double precio_total)
+    {
         this.id_resumen_compra = id_resumen_compra;
-        this.usuario_id = usuario_id;
+        this.usuarioResumen = usuarioResumen;
         this.en_proceso = en_proceso;
+        this.fecha_resumen_compra = fecha_resumen_compra;
+        this.precio_total_productos = precio_total_productos;
+        this.precio_domicilio = precio_domicilio;
+        this.precio_total = precio_total;
     }
 
     public int getId_resumen_compra() {
@@ -43,12 +57,12 @@ public class ResumenCompra {
         this.id_resumen_compra = id_resumen_compra;
     }
 
-    public int getUsuario_id() {
-        return usuario_id;
+    public Usuario getUsuarioResumen() {
+        return usuarioResumen;
     }
 
-    public void setUsuario_id(int usuario_id) {
-        this.usuario_id = usuario_id;
+    public void setUsuarioResumen(Usuario usuarioResumen) {
+        this.usuarioResumen = usuarioResumen;
     }
 
     public boolean isEn_proceso() {
@@ -89,6 +103,14 @@ public class ResumenCompra {
 
     public void setPrecio_total(Double precio_total) {
         this.precio_total = precio_total;
+    }
+
+    public List<ProductosAgregados> getProductosAgregados() {
+        return productosAgregados;
+    }
+
+    public void setProductosAgregados(List<ProductosAgregados> productosAgregados) {
+        this.productosAgregados = productosAgregados;
     }
 }
 //CREATE TABLE resumenCompra(

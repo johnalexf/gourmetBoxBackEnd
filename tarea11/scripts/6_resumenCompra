@@ -1,4 +1,4 @@
-INSERT INTO resumenCompra (usuarioId, precioTotalProductos, precioDomicilio, precioTotal, enProceso, fechaResumenCompra) VALUES
+INSERT INTO resumen_compra (usuario_id, precio_total_productos, precio_domicilio, precio_total, en_proceso, fecha_resumen_compra) VALUES
 (2, 59500, 12000, 71500, 1, "2024-11-21 15:26:47.000000"), -- Usuario 2 (12500*2 + 34500*1)
 (3, 51000, 12000, 63000, 1, "2024-11-21 15:26:47.000000"), -- Usuario 3 (16500*1 + 34500*1)
 (4, 68500, 12000, 80500, 1, "2024-11-21 15:26:47.000000"), -- Usuario 4 (18500*3 + 16500*2)

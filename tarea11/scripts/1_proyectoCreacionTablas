@@ -24,11 +24,11 @@ CREATE TABLE usuario(
     telefono VARCHAR(50) NOT NULL,
     es_admistrador BIT NOT NULL,
     suscripcion_id INT,
-    FOREIGN KEY (suscripcionId) REFERENCES suscripcion(idSuscripcion)
+    FOREIGN KEY (suscripcion_id) REFERENCES suscripcion(id_suscripcion)
 );
 
-CREATE TABLE resumenCompra(
-    id_resumenCompra INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE resumen_compra(
+    id_resumen_compra INT PRIMARY KEY AUTO_INCREMENT,
     usuario_id INT NOT NULL,
     precio_total_productos DOUBLE ,
     precio_domicilio DOUBLE ,
@@ -38,16 +38,16 @@ CREATE TABLE resumenCompra(
     FOREIGN KEY (usuario_id) REFERENCES usuario(id_usuario)
 );
 
-CREATE TABLE productosagregados (
+CREATE TABLE productos_agregados (
 	id_productos_agregados INT PRIMARY KEY AUTO_INCREMENT,
 	usuario_id INT(10) NOT NULL,
 	producto_id INT(10) NOT NULL,
 	cantidad_producto INT(10) NOT NULL,
 	subtotal DOUBLE NOT NULL,
 	resumen_compra_id INT(10) NOT NULL,
-	FOREIGN KEY (usuario_id) REFERENCES usuario(idUsuario),
-	FOREIGN KEY (productoId) REFERENCES producto(idProducto),
-	FOREIGN KEY (resumen_compra_id) REFERENCES resumenCompra(id_resumen_compra)
+	FOREIGN KEY (usuario_id) REFERENCES usuario(id_usuario),
+	FOREIGN KEY (producto_id) REFERENCES producto(id_producto),
+	FOREIGN KEY (resumen_compra_id) REFERENCES resumen_compra(id_resumen_compra)
 );
 
 

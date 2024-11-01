@@ -5,3 +5,4 @@ INSERT INTO suscripcion (nombre_plan, descripcion_plan, precio) VALUES
 ('Debug Box', '3 Desayunos, 3 Almuerzos, Bebida del día', 340000),
 ('Bakend Power', '4 Almuerzos (Personalizados), Bebida del día, Sopa del día', 250000),
 ('Senior Box Deluxe', '3 Desayunos (Personalizados), 2 Almuerzos ligeros, Smoothie proteico', 320000);
+

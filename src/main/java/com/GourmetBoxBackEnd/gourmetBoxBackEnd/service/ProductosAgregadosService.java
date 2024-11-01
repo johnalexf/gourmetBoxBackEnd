@@ -28,7 +28,7 @@ public class ProductosAgregadosService implements IProductosAgregadosService{
     }
 
     @Override
-    public ProductosAgregados findProductosAgregadosById(Integer id) {
+    public ProductosAgregados findProductoAgregadoById(Integer id) {
         ProductosAgregados productosAgregados = productosAgregadosRepository.findById(id).orElse(null);
         return productosAgregados;
     }
@@ -41,9 +41,9 @@ public class ProductosAgregadosService implements IProductosAgregadosService{
     @Override
     public void editProductosAgregados(Integer idOriginal, Usuario nuevoUsuario, ResumenCompra idResumenCompraNuevo, Producto nuevoProducto, Integer nuevaCantidadProducto, Double nuevoSubtotal) {
         ProductosAgregados productosA = this.findProductoAgregadoById(idOriginal);
-        productosA.setUsuario_id(nuevoUsuario);
-        productosA.setProducto_id(nuevoProducto);
-        productosA.setResumen_compra_id(idResumenCompraNuevo);
+        productosA.setUsuario(nuevoUsuario);
+        productosA.setProducto(nuevoProducto);
+        productosA.setResumenCompra(idResumenCompraNuevo);
         productosA.setCantidad_producto(nuevaCantidadProducto);
         productosA.setSubtotal(nuevoSubtotal);
         this.saveProductosAgregados(productosA);

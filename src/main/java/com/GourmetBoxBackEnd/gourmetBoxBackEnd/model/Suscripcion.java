@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -24,6 +26,9 @@ public class Suscripcion {
 
     @Column(nullable = false)
     private String img_suscripcion;
+
+    @OneToMany(mappedBy = "suscripcion")
+    private List<Usuario> listaUsuarioSuscripcion;
 
     // Constructor vacío
     public Suscripcion() {
@@ -78,5 +83,13 @@ public class Suscripcion {
 
     public void setImg_suscripcion(String img_suscripcion) {
         this.img_suscripcion = img_suscripcion;
+    }
+
+    public List<Usuario> getListaUsuarioSuscripcion() {
+        return listaUsuarioSuscripcion;
+    }
+
+    public void setListaUsuarioSuscripcion(List<Usuario> listaUsuarioSuscripcion) {
+        this.listaUsuarioSuscripcion = listaUsuarioSuscripcion;
     }
 }

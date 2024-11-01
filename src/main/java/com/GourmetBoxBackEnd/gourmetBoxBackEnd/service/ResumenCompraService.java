@@ -1,14 +1,17 @@
 package com.GourmetBoxBackEnd.gourmetBoxBackEnd.service;
 
-import com.GourmetBoxBackEnd.gourmetBoxBackEnd.model.Producto;
+
 import com.GourmetBoxBackEnd.gourmetBoxBackEnd.model.ResumenCompra;
 import com.GourmetBoxBackEnd.gourmetBoxBackEnd.repository.IResumenCompraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 
+@Service
 public class ResumenCompraService implements IResumenCompraService{
+
     @Autowired
     private IResumenCompraRepository resumenCompraRepository;
 

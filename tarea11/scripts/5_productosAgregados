@@ -1,4 +1,4 @@
-INSERT INTO productosagregados (usuario_id, producto_id, cantidad_producto, subtotal, resumen_compra_id) VALUES
+INSERT INTO productos_agregados (usuario_id, producto_id, cantidad_producto, subtotal, resumen_compra_id) VALUES
 (2, 1, 2, 12500 * 2,1), -- Wafle Primavera para el usuario 2
 (3, 2, 1, 16500 * 1,2), -- Tostada Napolitana para el usuario 3
 (4, 3, 3, 18500 * 3,3), -- Bowl Exotic para el usuario 4

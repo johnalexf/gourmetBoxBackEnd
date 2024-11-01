@@ -2,6 +2,7 @@ package com.GourmetBoxBackEnd.gourmetBoxBackEnd.service;
 
 import com.GourmetBoxBackEnd.gourmetBoxBackEnd.model.Producto;
 import com.GourmetBoxBackEnd.gourmetBoxBackEnd.model.ResumenCompra;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;

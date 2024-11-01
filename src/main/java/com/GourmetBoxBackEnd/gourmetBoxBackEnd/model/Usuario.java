@@ -1,6 +1,7 @@
 package com.GourmetBoxBackEnd.gourmetBoxBackEnd.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,10 +27,27 @@ public class Usuario {
     private String telefono;
     @Column (nullable = false)
     private Boolean es_administrador;
-    private int suscripcion_id;
+
+    //mascota
+    //    @OneToOne(mappedBy = "miMascota")
+    //    private Persona dueno;
+
+    // persona
+    //    @OneToOne //Establece la relacion de una a uno
+    //    @JoinColumn(name = "mascotaId" , referencedColumnName = "id_mascota")
+    //    private Mascota miMascota;
+
+    @ManyToOne
+    @JoinColumn(name = "suscripcion_id")
+    private Suscripcion suscripcion;
 
     @OneToMany(mappedBy = "usuario")
+    @JsonIgnore
     private List<ProductosAgregados> productosAgregados;
+
+    @OneToMany(mappedBy = "usuarioResumen")
+    @JsonIgnore
+    private List<ResumenCompra> resumenCompras;
 
     public Usuario(){
 
@@ -41,8 +59,8 @@ public class Usuario {
                    String user_name,
                    String correo,
                    String telefono,
-                   Boolean es_administrador,
-                   int suscripcion_id) {
+                   Boolean es_administrador
+    ) {
         this.id_usuario = id_usuario;
         this.nombre_usuario = nombre_usuario;
         this.contrasena = contrasena;
@@ -50,7 +68,6 @@ public class Usuario {
         this.correo = correo;
         this.telefono = telefono;
         this.es_administrador = es_administrador;
-        this.suscripcion_id = suscripcion_id;
     }
 
     public int getId_usuario() {
@@ -109,13 +126,28 @@ public class Usuario {
         this.es_administrador = es_administrador;
     }
 
-    public int getSuscripcion_id() {
-        return suscripcion_id;
+
+    public List<ProductosAgregados> getProductosAgregados() {
+        return productosAgregados;
     }
 
-    public void setSuscripcion_id(int suscripcion_id) {
-        this.suscripcion_id = suscripcion_id;
+    public void setProductosAgregados(List<ProductosAgregados> productosAgregados) {
+        this.productosAgregados = productosAgregados;
     }
 
+    public List<ResumenCompra> getResumenCompras() {
+        return resumenCompras;
+    }
 
+    public void setResumenCompras(List<ResumenCompra> resumenCompras) {
+        this.resumenCompras = resumenCompras;
+    }
+
+    public Suscripcion getSuscripcion() {
+        return suscripcion;
+    }
+
+    public void setSuscripcion(Suscripcion suscripcion) {
+        this.suscripcion = suscripcion;
+    }
 }

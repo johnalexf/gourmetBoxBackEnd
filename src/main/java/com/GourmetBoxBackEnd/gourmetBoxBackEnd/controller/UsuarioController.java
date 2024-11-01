@@ -27,16 +27,19 @@ public class UsuarioController {
 
 
     //verificar un usuario
-    @GetMapping("/usuario/verificar/{userName}:{contrasena}")
+    @GetMapping("/usuario/verificar/{userName}/{contrasena}")
     public int verificarUsuario(@PathVariable String userName,
                                @PathVariable String contrasena
                                ){
         List<Usuario> listaUsuarios =  usuarioService.getUsuarios();
         // 0 para decir que el usuario no se encontro
         int idUsuario = 0;
+        System.out.println(userName);
+        System.out.println(contrasena);
 
         for(Usuario usuarioDeLista: listaUsuarios){
-            if(usuarioDeLista.getNombre_usuario().equals(userName)){
+            System.out.println(usuarioDeLista.getUser_name());
+            if(usuarioDeLista.getUser_name().equals(userName)){
                 if(usuarioDeLista.getContrasena().equals(contrasena)){
                     idUsuario = usuarioDeLista.getId_usuario();
                 }else{
