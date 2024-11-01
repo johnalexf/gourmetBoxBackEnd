@@ -10,53 +10,53 @@ public class Producto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int idProducto;
+    private int id_producto;
     @Column (nullable = false)
-    private String nombreProducto;
+    private String nombre_producto;
     @Column (nullable = false)
-    private String descripcionProducto;
+    private String descripcion_producto;
     @Column (nullable = false)
     private String categoria;
     @Column (nullable = false)
-    private String imgProducto;
+    private String img_producto;
     @Column (nullable = false)
-    private Double precioProducto;
+    private Double precio_producto;
 
     public Producto(){
 
     }
 
-    public Producto(int idProducto, String nombreProducto, String descripcionProducto, String categoria, String imgProducto, Double precioProducto) {
-        this.idProducto = idProducto;
-        this.nombreProducto = nombreProducto;
-        this.descripcionProducto = descripcionProducto;
+    public Producto(int id_producto, String nombre_producto, String descripcion_producto, String categoria, String img_producto, Double precio_producto) {
+        this.id_producto = id_producto;
+        this.nombre_producto = nombre_producto;
+        this.descripcion_producto = descripcion_producto;
         this.categoria = categoria;
-        this.imgProducto = imgProducto;
-        this.precioProducto = precioProducto;
+        this.img_producto = img_producto;
+        this.precio_producto = precio_producto;
     }
 
-    public String getNombreProducto() {
-        return nombreProducto;
+    public int getId_producto() {
+        return id_producto;
     }
 
-    public void setNombreProducto(String nombreProducto) {
-        this.nombreProducto = nombreProducto;
+    public void setId_producto(int id_producto) {
+        this.id_producto = id_producto;
     }
 
-    public int getIdProducto() {
-        return idProducto;
+    public String getNombre_producto() {
+        return nombre_producto;
     }
 
-    public void setIdProducto(int idProducto) {
-        this.idProducto = idProducto;
+    public void setNombre_producto(String nombre_producto) {
+        this.nombre_producto = nombre_producto;
     }
 
-    public String getDescripcionProducto() {
-        return descripcionProducto;
+    public String getDescripcion_producto() {
+        return descripcion_producto;
     }
 
-    public void setDescripcionProducto(String descripcionProducto) {
-        this.descripcionProducto = descripcionProducto;
+    public void setDescripcion_producto(String descripcion_producto) {
+        this.descripcion_producto = descripcion_producto;
     }
 
     public String getCategoria() {
@@ -67,19 +67,19 @@ public class Producto {
         this.categoria = categoria;
     }
 
-    public String getImgProducto() {
-        return imgProducto;
+    public String getImg_producto() {
+        return img_producto;
     }
 
-    public void setImgProducto(String imgProducto) {
-        this.imgProducto = imgProducto;
+    public void setImg_producto(String img_producto) {
+        this.img_producto = img_producto;
     }
 
-    public Double getPrecioProducto() {
-        return precioProducto;
+    public Double getPrecio_producto() {
+        return precio_producto;
     }
 
-    public void setPrecioProducto(Double precioProducto) {
-        this.precioProducto = precioProducto;
+    public void setPrecio_producto(Double precio_producto) {
+        this.precio_producto = precio_producto;
     }
 }

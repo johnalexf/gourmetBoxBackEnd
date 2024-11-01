@@ -39,5 +39,4 @@ public class ProductosAgregados {
             this.subtotal = subtotal;
         }
 
-
 }
