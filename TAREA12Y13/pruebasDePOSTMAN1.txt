@@ -23,3 +23,80 @@ localhost:8080/producto/editar/2?nombre=plato para verificar&descripcion=hola mu
 
 
 Productos Agregados
+
+GET
+localhost:8080/productosagregados/traer
+
+POST
+localhost:8080/productosagregados/crear
+ {
+        "producto": {
+            "id_producto": 4,
+        },
+        "cantidad_producto": 2,
+        "usuario": {
+            "id_usuario": 2,
+        },
+        "resumenCompra": {
+            "id_resumen_compra": 1
+        },
+        "subtotal": 25000.0
+    }
+
+DELETE
+localhost:8080/productosagregados/borrar/11
+
+PUT
+localhost:8080/productosagregados/editar/4?cantidadProducto=4&subtotal=30000
+
+
+
+
+Resumen compra
+
+GET
+localhost:8080/resumencompra/traer
+
+POST
+localhost:8080/resumencompra/crear
+
+ {
+        "usuarioResumen": {
+            "id_usuario": 2
+        },
+        "en_proceso": true
+    }
+
+PUT
+localhost:8080/resumencompra/editar/5?en_proceso=false&precio_total_productos=35000&precio_domicilio=15000&precio_total=50000
+
+
+Suscripcion
+GET
+localhost:8080/suscripcion/traer
+
+
+Usuario
+GET
+localhost:8080/usuario/obtener/2
+
+GET
+localhost:8080/usuario/verificar/john/1d3828ef1337
+
+POST
+localhost:8080/usuario/crear
+BODY
+{
+    "nombre_usuario": "john forer",
+    "user_name": "johnalex",
+    "contrasena": "1d3828ef1337",
+    "correo": "johnforero@hotmail.com",
+    "telefono": "3201235654",
+    "es_administrador": false,
+    "suscripcion": null
+}
+
+PUT
+localhost:8080/usuario/editar/7?nombre=juanita perez&telefono=3202176000
+
+
