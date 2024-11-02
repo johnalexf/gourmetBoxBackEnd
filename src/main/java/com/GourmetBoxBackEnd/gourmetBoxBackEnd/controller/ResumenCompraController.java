@@ -32,8 +32,6 @@ public class ResumenCompraController {
     }
 
 
-
-
 //metodo para editar resumen compra
 @PutMapping("/resumencompra/editar/{id}")
 public ResumenCompra editResumenCompra( @PathVariable Integer id,
