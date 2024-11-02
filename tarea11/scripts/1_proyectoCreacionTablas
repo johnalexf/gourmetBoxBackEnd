@@ -1,10 +1,10 @@
 CREATE TABLE producto(
-	id_producto INT PRIMARY KEY AUTO_INCREMENT,
-	nombre_producto VARCHAR(50) NOT NULL,
-	descripcion_producto VARCHAR(200) NOT NULL,
-	categoria VARCHAR(15) NOT NULL,
-	img_producto VARCHAR(50) NOT NULL,
-	precio_producto DOUBLE NOT NULL
+    id_producto INT PRIMARY KEY AUTO_INCREMENT,
+    nombre_producto VARCHAR(50) NOT NULL,
+    descripcion_producto VARCHAR(200) NOT NULL,
+    categoria VARCHAR(15) NOT NULL,
+    img_producto VARCHAR(50) NOT NULL,
+    precio_producto DOUBLE NOT NULL
 ); 
 
 CREATE TABLE suscripcion(

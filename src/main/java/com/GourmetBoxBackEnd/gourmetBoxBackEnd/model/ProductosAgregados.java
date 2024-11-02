@@ -21,11 +21,11 @@ public class ProductosAgregados {
         private Integer cantidad_producto;
 
         @OneToOne
-        @JoinColumn(name = "id_usuario")
+        @JoinColumn(name = "usuario_id")
         private Usuario usuario;
 
         @ManyToOne
-        @JoinColumn(name = "id_resumen_compra")
+        @JoinColumn(name = "resumen_compra_id")
         private ResumenCompra resumenCompra;
 
         @Column(nullable = false)

@@ -41,11 +41,11 @@ public class ProductoService implements IProductoService{
                              String nuevoImgProducto, Double nuevoPrecioProducto) {
 
             Producto producto=this.findProductoById(idOriginal);
-            producto.setNombre_producto(nuevoNombreProducto);
-            producto.setDescripcion_producto(nuevoDescripcionProducto);
-            producto.setCategoria(nuevoCategoria);
-            producto.setImg_producto(nuevoImgProducto);
-            producto.setPrecio_producto(nuevoPrecioProducto);
+        if(nuevoNombreProducto!=null)producto.setNombre_producto(nuevoNombreProducto);
+        if(nuevoDescripcionProducto!=null)producto.setDescripcion_producto(nuevoDescripcionProducto);
+        if(nuevoCategoria!=null)producto.setCategoria(nuevoCategoria);
+        if(nuevoImgProducto!=null)producto.setImg_producto(nuevoImgProducto);
+        if(nuevoPrecioProducto!=null)producto.setPrecio_producto(nuevoPrecioProducto);
             this.productoRepository.save(producto);
     }
 }

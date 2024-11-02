@@ -40,11 +40,11 @@ public class ResumenCompraService implements IResumenCompraService{
     @Override
     public void editResumenCompra(Integer idResumenCompraOriginal, Double nuevoPrecioTotalProductos, Double nuevoPrecioDomicilio, Double nuevoPrecioTotal, boolean nuevoEnproceso, Date nuevaFechaResumenCompra) {
         ResumenCompra resumenCompraOriginal=this.findResumenCompraById(idResumenCompraOriginal);
-        resumenCompraOriginal.setPrecio_total_productos(nuevoPrecioTotalProductos);
-        resumenCompraOriginal.setPrecio_domicilio(nuevoPrecioDomicilio);
-        resumenCompraOriginal.setPrecio_total(nuevoPrecioTotal);
+        if(nuevoPrecioTotalProductos!=null)resumenCompraOriginal.setPrecio_total_productos(nuevoPrecioTotalProductos);
+        if(nuevoPrecioDomicilio!=null)resumenCompraOriginal.setPrecio_domicilio(nuevoPrecioDomicilio);
+        if(nuevoPrecioTotal!=null)resumenCompraOriginal.setPrecio_total(nuevoPrecioTotal);
         resumenCompraOriginal.setEn_proceso(nuevoEnproceso);
-        resumenCompraOriginal.setFecha_resumen_compra(nuevaFechaResumenCompra);
+        if(nuevaFechaResumenCompra!=null)resumenCompraOriginal.setFecha_resumen_compra(nuevaFechaResumenCompra);
         this.saveResumenCompra(resumenCompraOriginal);
     }
 }
