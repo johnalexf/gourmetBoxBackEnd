@@ -1,0 +1,25 @@
+Entidad producto
+
+GET
+localhost:8080/producto/traer
+
+POST
+localhost:8080/producto/crear
+BODY
+ {
+        "nombre_producto": "SOPA",
+        "descripcion_producto": "Waffle con crema dulce y naranja en conserva caramelizada",
+        "categoria": "desayuno",
+        "img_producto": "../img_comidas/DESAYUNOS/Wafle_primavera.png",
+        "precio_producto": 12500.0
+    }
+
+DELETE
+localhost:8080/producto/borrar/11
+
+PUT
+localhost:8080/producto/editar/2?nombre=plato para verificar&descripcion=hola mundo
+
+
+
+Productos Agregados
