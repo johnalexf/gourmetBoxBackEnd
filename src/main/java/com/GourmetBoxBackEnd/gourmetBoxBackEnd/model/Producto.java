@@ -1,5 +1,6 @@
 package com.GourmetBoxBackEnd.gourmetBoxBackEnd.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,6 +26,7 @@ public class Producto {
     private Double precio_producto;
 
     @OneToMany(mappedBy = "producto")
+    @JsonIgnore
     private List<ProductosAgregados> productosAgregados;
 
 
