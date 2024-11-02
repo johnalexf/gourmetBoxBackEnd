@@ -13,7 +13,9 @@ import java.util.List;
 public class Suscripcion {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    //Se usa identity en vez de sequence dado que el secuence inicia desde 1 generando un error al crear
+    //nuevos productos y en cambio identity, si toma en cuenta los datos que ya se encuentran en la base de datos
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_suscripcion;
 
     @Column(nullable = false)

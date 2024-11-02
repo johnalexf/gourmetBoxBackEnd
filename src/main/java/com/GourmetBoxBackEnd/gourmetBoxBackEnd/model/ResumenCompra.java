@@ -12,7 +12,7 @@ import java.util.List;
 @Entity
 public class ResumenCompra {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_resumen_compra;
 
     @ManyToOne

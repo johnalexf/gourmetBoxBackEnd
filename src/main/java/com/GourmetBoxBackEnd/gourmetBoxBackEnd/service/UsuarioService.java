@@ -46,8 +46,8 @@ public class UsuarioService implements IUsuarioService{
     {
         Usuario usuario = this.findUsuarioById(idOriginal);
         if(nuevoNombreUsuario!=null)usuario.setNombre_usuario(nuevoNombreUsuario);
-        if(nuevoNombreUsuario!=null)usuario.setTelefono(nuevoTelefono);
-        if(nuevoNombreUsuario!=null)usuario.setCorreo(nuevoCorreo);
+        if(nuevoTelefono!=null)usuario.setTelefono(nuevoTelefono);
+        if(nuevoCorreo!=null)usuario.setCorreo(nuevoCorreo);
         this.saveUsuario(usuario);
     }
 }

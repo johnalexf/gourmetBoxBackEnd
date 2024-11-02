@@ -13,7 +13,7 @@ import java.util.List;
 public class Usuario {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.SEQUENCE)
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int id_usuario;
     @Column(nullable = false)
     private String nombre_usuario;
