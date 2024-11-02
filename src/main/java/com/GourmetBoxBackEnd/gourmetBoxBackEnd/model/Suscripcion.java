@@ -1,5 +1,6 @@
 package com.GourmetBoxBackEnd.gourmetBoxBackEnd.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -28,6 +29,7 @@ public class Suscripcion {
     private String img_suscripcion;
 
     @OneToMany(mappedBy = "suscripcion")
+    @JsonIgnore
     private List<Usuario> listaUsuarioSuscripcion;
 
     // Constructor vacío
