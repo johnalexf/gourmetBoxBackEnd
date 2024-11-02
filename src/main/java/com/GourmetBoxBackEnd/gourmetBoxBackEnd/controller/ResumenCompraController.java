@@ -26,6 +26,7 @@ public class ResumenCompraController {
     //metodo para guardar resumen compra
     @PostMapping("/resumencompra/crear")
     public String saveResumenCompra(@RequestBody ResumenCompra resumenCompra) {
+        System.out.println(resumenCompra);
         resumenCompraService.saveResumenCompra(resumenCompra);
         return "El resumen compra se creo con exito";
     }
@@ -42,6 +43,9 @@ public ResumenCompra editResumenCompra( @PathVariable Integer id,
                                         @RequestParam(required = false, name="precio_domicilio") Double precio_domicilio,
                                         @RequestParam(required = false, name="precio_total") Double precio_total
 ){
+        Date currentFechaCompra=new Date();
+        fecha_resumen_compra=currentFechaCompra;
+    System.out.println(currentFechaCompra);
    // Integer idResumenCompraOriginal, Double nuevoPrecioTotalProductos, Double nuevoPrecioDomicilio, Double nuevoPrecioTotal, boolean nuevoEnproceso, Date nuevaFechaResumenCompra
     resumenCompraService.editResumenCompra(id,precio_total_productos,precio_domicilio,precio_total, en_proceso,fecha_resumen_compra);
     ResumenCompra resumenCompra = resumenCompraService.findResumenCompraById(id);
