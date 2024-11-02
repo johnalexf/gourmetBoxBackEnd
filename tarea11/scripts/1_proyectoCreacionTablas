@@ -1,9 +1,9 @@
 CREATE TABLE producto(
 	id_producto INT PRIMARY KEY AUTO_INCREMENT,
 	nombre_producto VARCHAR(50) NOT NULL,
-	descripcion_roducto VARCHAR(200) NOT NULL,
+	descripcion_producto VARCHAR(200) NOT NULL,
 	categoria VARCHAR(15) NOT NULL,
-	img_roducto VARCHAR(50) NOT NULL,
+	img_producto VARCHAR(50) NOT NULL,
 	precio_producto DOUBLE NOT NULL
 ); 
 
@@ -22,7 +22,7 @@ CREATE TABLE usuario(
     contrasena VARCHAR(200) NOT NULL,
     correo VARCHAR(50) NOT NULL,
     telefono VARCHAR(50) NOT NULL,
-    es_admistrador BIT NOT NULL,
+    es_administrador BIT NOT NULL,
     suscripcion_id INT,
     FOREIGN KEY (suscripcion_id) REFERENCES suscripcion(id_suscripcion)
 );
