@@ -14,8 +14,22 @@ localhost:8080/producto/borrar/11
 
 localhost:8080/productosagregados/traer
 localhost:8080/productosagregados/crear
- {
+{
+    "producto": {
+    "id_producto": 1
+    },
+    "cantidad_producto": 20,
+    "usuario": {
+    "id_usuario": 2
+    },
+    "resumenCompra": {
+    "id_resumen_compra": 1,
+    "en_proceso": true
+    },
+    "subtotal": 25000.0
+}
 
+{
         "producto": {
             "id_producto": 1,
             "nombre_producto": "Wafle Primaveraaaaaaaaaaaa",
