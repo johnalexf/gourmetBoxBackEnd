@@ -39,7 +39,13 @@ public class ProductosAgregadosService implements IProductosAgregadosService{
     }
 
     @Override
-    public void editProductosAgregados(Integer idOriginal, Usuario nuevoUsuario, ResumenCompra idResumenCompraNuevo, Producto nuevoProducto, Integer nuevaCantidadProducto, Double nuevoSubtotal) {
+    public void editProductosAgregados(Integer idOriginal,
+                                       Usuario nuevoUsuario,
+                                       ResumenCompra idResumenCompraNuevo,
+                                       Producto nuevoProducto,
+                                       Integer nuevaCantidadProducto,
+                                       Double nuevoSubtotal
+    ) {
         ProductosAgregados productosA = this.findProductoAgregadoById(idOriginal);
         if(nuevoUsuario!=null)productosA.setUsuario(nuevoUsuario);
         if(nuevoProducto!=null)productosA.setProducto(nuevoProducto);
