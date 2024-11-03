@@ -4,6 +4,7 @@ import com.GourmetBoxBackEnd.gourmetBoxBackEnd.model.Producto;
 import com.GourmetBoxBackEnd.gourmetBoxBackEnd.model.Usuario;
 import com.GourmetBoxBackEnd.gourmetBoxBackEnd.service.IUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,7 +29,7 @@ public class UsuarioController {
 
     //verificar un usuario
     @GetMapping("/usuario/verificar/{userName}/{contrasena}")
-    public int verificarUsuario(@PathVariable String userName,
+    public String verificarUsuario(@PathVariable String userName,
                                @PathVariable String contrasena
                                ){
         List<Usuario> listaUsuarios =  usuarioService.getUsuarios();
@@ -50,7 +51,7 @@ public class UsuarioController {
             }
         }
 
-        return idUsuario;
+        return  Integer.toString(idUsuario);
 
     }
 

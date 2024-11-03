@@ -19,4 +19,5 @@ public class SuscripcionController {
     public List<Suscripcion> getSuscripciones() {
         return suscripcionService.getSuscripciones();
     }
+
 }
