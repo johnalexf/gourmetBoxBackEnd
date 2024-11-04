@@ -29,13 +29,14 @@ localhost:8080/productosagregados/traer
 
 POST
 localhost:8080/productosagregados/crear
+BODY
  {
         "producto": {
-            "id_producto": 4,
+            "id_producto": 4
         },
-        "cantidad_producto": 2,
+        "cantidad_producto": 2
         "usuario": {
-            "id_usuario": 2,
+            "id_usuario": 2
         },
         "resumenCompra": {
             "id_resumen_compra": 1
@@ -59,13 +60,23 @@ localhost:8080/resumencompra/traer
 
 POST
 localhost:8080/resumencompra/crear
-
+BODY
  {
         "usuarioResumen": {
             "id_usuario": 2
         },
         "en_proceso": true
     }
+En resumen compra no asignamos valor a:
+Precio total productos
+precio domicilio
+precio total
+fecha
+Por que este resumen compra es para poder asociar unos productos agregados a
+una transaccion en proceso, al finalizar la compra si se asignan dichos valores
+cambiando en_proceso a falso ya que se da por terminada la compra y queda un historial
+en la base de datos de las compras realizadas por el usuario.
+
 
 PUT
 localhost:8080/resumencompra/editar/5?en_proceso=false&precio_total_productos=35000&precio_domicilio=15000&precio_total=50000
@@ -77,11 +88,16 @@ localhost:8080/suscripcion/traer
 
 
 Usuario
-GET
-localhost:8080/usuario/obtener/2
 
 GET
 localhost:8080/usuario/verificar/john/1d3828ef1337
+Con esta consulta enviamos el username y la contraseña para esperar como retorno el id de usuario
+En dado caso que el usuario no exista se devolvera un 0
+Y en dado caso que la contraseña sea incorrecta se retornara un -1
+
+GET
+localhost:8080/usuario/obtener/2
+
 
 POST
 localhost:8080/usuario/crear

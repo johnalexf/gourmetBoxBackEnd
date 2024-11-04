@@ -1,5 +1,9 @@
+Entidad producto
+
+GET
 localhost:8080/producto/traer
 
+POST
 localhost:8080/producto/crear
 {
     "nombre_producto": "Wafle Primavera",
@@ -9,11 +13,20 @@ localhost:8080/producto/crear
     "precio_producto": 12500.0
 }
 
+PUT
 localhost:8080/producto/editar/11?nombre=Wafle 4 estaciones
+
+DELETE
 localhost:8080/producto/borrar/11
 
+ENTIDAD PRODUCTOS AGREGADOS
+
+GET
 localhost:8080/productosagregados/traer
+
+POST
 localhost:8080/productosagregados/crear
+BODY:
 {
     "producto": {
     "id_producto": 1
@@ -23,80 +36,66 @@ localhost:8080/productosagregados/crear
     "id_usuario": 2
     },
     "resumenCompra": {
-    "id_resumen_compra": 1,
-    "en_proceso": true
+    "id_resumen_compra": 1
     },
     "subtotal": 25000.0
 }
 
+
+POST
+localhost:8080/productosagregados/crear
+BODY:
 {
         "producto": {
-            "id_producto": 1,
-            "nombre_producto": "Wafle Primaveraaaaaaaaaaaa",
-            "descripcion_producto": "Waffle con crema dulce y naranja en conserva caramelizada",
-            "categoria": "desayuno",
-            "img_producto": "../img_comidas/DESAYUNOS/Wafle_primavera.png",
-            "precio_producto": 12500.0
+            "id_producto": 1
         },
         "cantidad_producto": 2,
         "usuario": {
-            "id_usuario": 2,
-            "nombre_usuario": "john forer",
-            "user_name": "john",
-            "contrasena": "1d3828ef1337",
-            "correo": "johnforero@hotmail.com",
-            "telefono": "3201235654",
-            "es_administrador": false,
-            "suscripcion": null
+            "id_usuario": 2
         },
         "resumenCompra": {
-            "id_resumen_compra": 1,
-            "usuarioResumen": {
-                "id_usuario": 2,
-                "nombre_usuario": "john forer",
-                "user_name": "john",
-                "contrasena": "1d3828ef1337",
-                "correo": "johnforero@hotmail.com",
-                "telefono": "3201235654",
-                "es_administrador": false,
-                "suscripcion": null
-            },
-            "en_proceso": true,
-            "fecha_resumen_compra": "2024-11-21T20:26:47.000+00:00",
-            "precio_total_productos": 59500.0,
-            "precio_domicilio": 12000.0,
-            "precio_total": 71500.0
+            "id_resumen_compra": 1
         },
         "subtotal": 25000.0
     }
 
-
+PUT
 localhost:8080/productosagregados/editar/12?cantidadProducto=100
+
+DELETE
 localhost:8080/productosagregados/borrar/12
 
+
+ENTIDAD RESUMEN COMPRA
+
+GET
 localhost:8080/resumencompra/traer
+
+POST
 localhost:8080/resumencompra/crear
 {
-
         "usuarioResumen": {
-            "id_usuario": 2,
-            "nombre_usuario": "john forer",
-            "user_name": "john",
-            "contrasena": "1d3828ef1337",
-            "correo": "johnforero@hotmail.com",
-            "telefono": "3201235654",
-            "es_administrador": false,
-            "suscripcion": null
+            "id_usuario": 2
         },
-        "en_proceso": true,
-        "fecha_resumen_compra": "2024-11-21T20:26:47.000+00:00"
-    }
+        "en_proceso": true
+  }
 
-
+PUT
 localhost:8080/resumencompra/editar/6?precio_total_productos=350000&precio_domicilio=50000&precio_total=400000
 
+ENTIDAD SUSCRIPCION
+
+GET
 localhost:8080/suscripcion/traer
 
+
+ENTIDAD USUARIO
+
+GET
 localhost:8080/usuario/verificar/Eduard/1b392df62ccd1337
+
+GET
 localhost:8080/usuario/obtener/3
+
+PUT
 localhost:8080/usuario/editar/7?nombre=Andres Eduard
