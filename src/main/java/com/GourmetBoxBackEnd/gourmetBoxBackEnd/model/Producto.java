@@ -20,8 +20,12 @@ public class Producto {
     private String descripcion_producto;
     @Column (nullable = false)
     private String categoria;
-    @Column (nullable = false)
+
+    @Lob
+    @Column(columnDefinition = "MEDIUMTEXT", nullable = false)
     private String img_producto;
+
+
     @Column (nullable = false)
     private Double precio_producto;
 

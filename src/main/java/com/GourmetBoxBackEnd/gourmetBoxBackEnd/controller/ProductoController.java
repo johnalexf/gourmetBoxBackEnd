@@ -28,7 +28,9 @@ public class ProductoController {
     //metodo para guardar producto
     @PostMapping("/producto/crear")
     public String saveProducto(@RequestBody Producto producto){
+        System.out.println(producto.getImg_producto());
         productoService.saveProducto(producto);
+
         return "El producto se creo con exito";
     }
 
