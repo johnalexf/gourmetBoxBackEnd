@@ -54,9 +54,11 @@ public class ProductoController {
                                   @RequestParam(required = false, name="descripcion") String nuevadescripcion,
                                   @RequestParam(required = false, name="categoria") String nuevaCategoria,
                                   @RequestParam(required = false, name="image") String nuevoImagen,
-                                  @RequestParam(required = false, name="precio") Double nuevoPrecio
+                                  @RequestParam(required = false, name="precio") Double nuevoPrecio,
+                                  @RequestBody String imagen
     ){
-        productoService.editProducto(id, nuevoNombre, nuevadescripcion, nuevaCategoria, nuevoImagen, nuevoPrecio);
+        System.out.println(imagen);
+        productoService.editProducto(id, nuevoNombre, nuevadescripcion, nuevaCategoria, imagen, nuevoPrecio);
         Producto producto = productoService.findProductoById(id);
         return producto;
     }
