@@ -24,6 +24,9 @@ El proyecto se enfoca en las siguientes funcionalidades:
     *   Actualización de producto (`PUT /producto/editar/{id}`)
     *   Eliminación de producto (`DELETE /producto/borrar/{id}`)
 
+## Diagrama base de datos 
+![Diagrama base de datos](tarea11/Diagrama Entidad Relacion GBOX.jpg)
+
 ## Próximos pasos
 
 Se planea expandir el proyecto para incluir la funcionalidad de carrito de compras, permitiendo a los usuarios guardar los productos que desean adquirir.
@@ -88,6 +91,7 @@ Este proyecto está desplegado en Railway y la base de datos en Amazon AWS en un
 ## Agradecimientos
 
 Agradecemos a Generation Colombia por la oportunidad de participar en el bootcamp Desarrollador Web Full Stack Java, donde nació la idea de este proyecto como presentación final.
+
 
 
 
