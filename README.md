@@ -25,7 +25,7 @@ El proyecto se enfoca en las siguientes funcionalidades:
     *   Eliminación de producto (`DELETE /producto/borrar/{id}`)
 
 ## Diagrama base de datos 
-![Diagrama de la base de datos](tarea11/Diagrama Entidad Relacion GBOX.jpg)
+![Diagrama de la base de datos](tarea11/Diagrama_Entidad_Relacion_GBOX.jpg)
 
 ## Próximos pasos
 
